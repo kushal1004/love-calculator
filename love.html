@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: aqua;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #calculator {
+            text-align: center;
+        }
+
+        #result {
+            font-size: 25px;
+            font-weight: bold;
+            color: rgb(212, 16, 111);
+        }
+    </style>
+</head>
+<body>
+<div id="calculator">
+    <h1>Love calculator</h1>
+    <label for="yourname">YOUR NAME: </label>
+    <input type="text" id="yourname" placeholder="Your name"><br>
+    <h1 style="font-family: cursive;">💕LOVE💖</h1>
+    <label for="partnername">PARTNER NAME: </label>
+    <input type="text" id="partnername" placeholder="Partner name"><br><br>
+    <div id="result"></div>
+    <button onclick="calculatelove()">Calculate Love Percentage</button>
+    <div id="result"></div>
+    <button onclick="reset()" style="right:auto">Reset</button>
+</div>
+
+<script>
+    function calculatelove() {
+        var yourName = document.getElementById("yourname").value.toLowerCase();
+        var partnerName = document.getElementById("partnername").value.toLowerCase();
+        var lovepersentage = Math.floor(Math.random() * 101);
+
+        document.getElementById("result").innerHTML ="Love parsentage of  "+yourName+ " and  " +partnerName+" is " +lovepersentage + "%";
+    }
+
+   /* function calculatePercentage(name1, name2) {
+        var combinedName = name1 + name2;
+        var letters = combinedName.replace(/\s+/g, '').split('');
+        var uniqueLetters = [...new Set(letters)];
+        var percentage = uniqueLetters.length * 10;
+
+        if (percentage > 100) {
+            percentage = 100;
+        }
+
+        return percentage;
+    }*/
+
+    function reset() {
+        document.getElementById("yourname").value = "";
+        document.getElementById("partnername").value = "";
+        document.getElementById("result").innerHTML = "";
+    }
+</script>
+</body>
+</html>
